@@ -1,0 +1,15 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: teacher-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: schoolInfo
+  config:
+    import: "optional:configserver:http://localhost:9196/"
+eureka:
+  instance:
+    appname: teacher-service

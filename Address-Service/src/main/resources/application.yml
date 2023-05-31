@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: address-service
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: schoolInfo
+
+  config:
+    import: "optional:configserver:http://localhost:9196/"
+
+springdoc:
+  swagger-ui:
+    tryItOutEnabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    path: /address-documentation
+  api-docs:
+    path: /address-api-docs
+eureka:
+  instance:
+    appname: address-service

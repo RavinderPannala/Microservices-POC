@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: subject-service
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: schoolInfo
+
+  config:
+    import: "optional:configserver:http://localhost:9196/"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    appname: subject-service
